@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"github.com/julienschmidt/httprouter"
+	"github.com/rs/cors"
 	"gopkg.in/mgo.v2"
 
 	"what-class-is-this/server/controllers"
@@ -23,12 +24,12 @@ func getSession() *mgo.Session {
 }
 
 func main() {
-	r := httprouter.New()
+	router := httprouter.New()
 
 	cc := controllers.NewCourseController(getSession())
 
-	r.GET("/api/course/filter", cc.GetCurrent)
-	r.GET("/api/course/single/:id", cc.GetById)
+	router.GET("/api/course/filter", cc.GetCurrent)
+	router.GET("/api/course/single/:id", cc.GetById)
 
 	port := os.Getenv("PORT")
 
@@ -36,7 +37,8 @@ func main() {
 		port = "3001"
 	}
 
-	if err := http.ListenAndServe(fmt.Sprintf("localhost:%s", port), r); err != nil {
+	handler := cors.Default().Handler(router)
+	if err := http.ListenAndServe(fmt.Sprintf("localhost:%s", port), handler); err != nil {
 		log.Fatal(err)
 	}
 
