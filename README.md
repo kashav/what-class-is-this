@@ -4,8 +4,6 @@
 
 ### Installation
 
-### Components
-
 ### Usage
 
 ### Contribute
