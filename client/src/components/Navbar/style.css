@@ -1,0 +1,28 @@
+.app__navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar__container {
+  width: 90vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar__container a:hover {
+  color: #4078c0;
+}
+
+.container__name {
+  display: inline-block;
+}
+
+.container__logo--right img {
+  height: 24px;
+}
+
+.container__logo--right {
+  float: right;
+}

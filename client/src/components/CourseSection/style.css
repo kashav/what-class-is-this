@@ -1,0 +1,33 @@
+.section {
+  display: inline-block;
+  padding: 15px;
+  margin: 5px 10px;
+  min-width: 350px;
+  min-height: 100px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  position: relative;
+}
+
+.section .section__numbers {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  float: right;
+}
+
+.section .section__name {
+  float: left;
+}
+
+.section .section__name div,
+.section .section__numbers div {
+  display: inline-block;
+}
+
+.section__time {}
+
+.time__start,
+.time__end {
+  display: inline-block;
+}

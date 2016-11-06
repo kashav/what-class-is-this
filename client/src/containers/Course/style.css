@@ -1,0 +1,11 @@
+.course {}
+
+.course__title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.course__sections {
+  margin: 30px auto;
+  text-align: center;
+}
