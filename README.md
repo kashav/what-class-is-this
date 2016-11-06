@@ -4,8 +4,54 @@
 
 ### Installation
 
+- __Requirements__
+  + [Go](https://golang.org/)
+  + [npm](https://www.npmjs.com/)
+  + [MongoDB](https://www.mongodb.com/)
+
+- Clone repository.
+
+  ```sh
+  $ git clone https://github.com/kshvmdn/what-class-is-this.git
+  $ cd what-class-is-this
+  ```
+
+- Install dependencies
+
+  ```sh
+  $ cd client && npm install && cd ..
+  $ cd server && go get -d && cd ..
+  ```
+
+- Start MongoDB (this will run it as a Daemon process, simply use `mongod` to run it normally)
+
+  ```
+  $ mongod --fork --logpath log/mongod.log --logappend
+  ```
+
+- Populate database
+
+  ```
+  $ scripts/populate.sh
+  ```
+
+- Start server (include the `&` to run in background)
+
+  ```sh
+  $ go build -o server/www server/server.go && server/www &
+  ```
+
+- Start web application
+
+  ```sh
+  $ cd client
+  $ npm start
+  ```
+
 ### Usage
+
+-_Coming soon._
 
 ### Contribute
 
-### License
+This project is completely open source. Feel free to open an issue or submit a pull request! :smile:
