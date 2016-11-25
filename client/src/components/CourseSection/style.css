@@ -1,12 +1,10 @@
 .section {
-  display: inline-block;
   padding: 15px;
-  margin: 5px 10px;
-  min-width: 350px;
-  min-height: 100px;
+  margin: 15px 10px;
   border: 1px solid #eee;
   border-radius: 5px;
   position: relative;
+  font-size: 1.1em;
 }
 
 .section .section__numbers {
@@ -16,18 +14,34 @@
   float: right;
 }
 
-.section .section__name {
-  float: left;
-}
-
 .section .section__name div,
 .section .section__numbers div {
   display: inline-block;
 }
 
-.section__time {}
+.section__time {
+  margin: 10px 0;
+  margin-right: 30px;
+  font-size: 0.9em;
+  font-weight: 300;
+}
 
 .time__start,
 .time__end {
   display: inline-block;
+}
+
+.time__location {
+  display: inline-block;
+}
+
+.time__location::before {
+  content: ', ';
+}
+
+@media screen and (max-width: 500px) {
+  .section {
+    font-size: 0.9em;
+    margin: 5px 10px;
+  }
 }

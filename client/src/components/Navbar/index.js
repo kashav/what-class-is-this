@@ -6,10 +6,10 @@ const Navbar = () => (
   <div className="app__navbar">
     <div className="navbar__container">
       <div className="container__name">
-        <a href="/" title="What Class Is This??">&lt; logo /&gt;</a>
+        <a href="/" title="What Class Is This??">&lt;logo/&gt;</a>
       </div>
       <div className="container__logo--right">
-        <a href="https://github.com/kshvmdn/explore-github" title="GitHub">
+        <a href="https://github.com/kshvmdn/what-class-is-this" title="GitHub">
           <img src={githubLogo} alt="logo" />
         </a>
       </div>

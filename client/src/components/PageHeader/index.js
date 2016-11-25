@@ -8,18 +8,25 @@ class PageHeader extends Component {
     this.state = { ...props }
   }
 
+  get title() {
+    if (!this.state.title)
+      return <h3></h3>;
+
+    return <h3>{this.state.title}</h3>;
+  }
+
+  get subtitle() {
+    if (!this.state.subtitle)
+      return <h5></h5>;
+
+    return <h5>{this.state.subtitle}</h5>;
+  }
+
   render() {
-    let { title, subtitle } = this.state;
-
-    if (!title) {
-      return <div></div>;
-    }
-
-
     return (
       <div className="header__container">
-        <h3>{ title }</h3>
-        <h5>{ subtitle }</h5>
+        {this.title}
+        {this.subtitle}
       </div>
     );
   }

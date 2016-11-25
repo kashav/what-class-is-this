@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-
 import PageHeader from './../../components/PageHeader';
 import CourseSection from './../../components/CourseSection';
-
 import fetch from './../../utils/fetch';
 import { BASE_URL } from './../../utils/constants';
-
 import loading from './../../static/images/loading-ring.svg';
 import './style.css';
 
@@ -55,16 +52,12 @@ class Course extends Component {
       );
     }
 
-    console.log(courseData)
-
     return (
       <div className="course">
         <div className="course__title">{ courseData.name }, <em>{ courseData.term }</em></div>
-        <div className="course__sections">{ courseData.sections.map((section, i) => {
-          return (
-            <CourseSection key={i} data={section}/>
-          );
-        })}</div>
+        <div className="course__sections">{ courseData.sections.map((section, i) => (
+          <CourseSection key={i} data={section}/>
+        )) }</div>
       </div>
     );
   }
@@ -74,7 +67,11 @@ class Course extends Component {
       <div className="app__body">
         <div className="body__container">
           <div className="body__header">{this.pageHeader}</div>
-          <div className="body__content">{this.courseData}</div>
+          <div className="body__content">
+            <div className="content__container">
+              {this.courseData}
+            </div>
+          </div>
         </div>
       </div>
     )

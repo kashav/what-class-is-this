@@ -3,7 +3,6 @@ import { Router, Route, browserHistory } from 'react-router';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
 import Home from './containers/Home';
 import Result from './containers/Result';
 import Course from './containers/Course';

@@ -21,3 +21,9 @@
 .app__footer a:hover {
   color: #4078c0;
 }
+
+@media screen and (max-width: 500px) {
+  .app__footer {
+    font-size: 14px;
+  }
+}
