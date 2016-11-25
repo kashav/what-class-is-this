@@ -28,7 +28,7 @@ func main() {
 
 	cc := controllers.NewCourseController(getSession())
 
-	router.GET("/api/course/filter", cc.GetCurrent)
+	router.GET("/api/course/now", cc.GetNow)
 	router.GET("/api/course/single/:id", cc.GetById)
 
 	port := os.Getenv("PORT")

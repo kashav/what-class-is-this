@@ -42,7 +42,7 @@ func (cc CourseController) GetById(w http.ResponseWriter, r *http.Request, p htt
 	fmt.Fprintf(w, "%s", cj)
 }
 
-func (cc CourseController) GetCurrent(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func (cc CourseController) GetNow(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	params := r.URL.Query()
 
 	location := params.Get("location")
