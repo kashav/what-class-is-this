@@ -4,7 +4,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './containers/Home';
-import Result from './containers/Result';
+import Class from './containers/Class';
 import Course from './containers/Course';
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
         <Router history={browserHistory}>
           <Route path="/" component={Home} />
           <Route path="/course/:id" component={Course} />
-          <Route path="/result" component={Result} />
+          <Route path="/class" component={Class} />
           <Route path="*" component={Home} />
         </Router>
         <Footer />

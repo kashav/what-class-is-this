@@ -1,0 +1,7 @@
+.body__content--loading img {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {}

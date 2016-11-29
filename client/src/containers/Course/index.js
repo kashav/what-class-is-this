@@ -11,7 +11,7 @@ class Course extends Component {
     super();
 
     this.state = {
-      id: '',
+      id: null,
       courseData: {}
     }
   }

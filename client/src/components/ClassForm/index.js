@@ -70,7 +70,7 @@ class ClassForm extends Component {
 
       if (!formError.hasOwnProperty('time')) {
         try {
-          let time = this.prepareTime()
+          this.prepareTime()
         } catch (e) {
           formError.time = 'Invalid format';
         }
@@ -92,7 +92,7 @@ class ClassForm extends Component {
       if (!isValid)
         return
 
-      window.location = `/result?location=${this.state.room}&day=${this.state.day}&start=${this.prepareTime()}`;
+      window.location = `/class?location=${this.state.room}&day=${this.state.day}&start=${this.prepareTime()}`;
     });
   }
 
