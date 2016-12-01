@@ -35,8 +35,6 @@ class Class extends Component {
   }
 
   get courses() {
-    console.log(this.state.courses);
-
     return (
       <div className="container__results">
         {this.state.courses.map((course, i) => (
