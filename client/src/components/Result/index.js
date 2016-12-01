@@ -6,9 +6,9 @@ class Result extends Component {
     let { course } = this.props;
 
     return (
-      <div>
-        <a href={`/course/${course.id}`}>{course.name}</a>
-        <div>{course.code}, {course.department}</div>
+      <div className="results__result">
+        <a className="result__name" href={`/course/${course.id}`}>{course.name}</a>
+        <div className="result__description">{course.code}, {course.department} – {(course.sections.map(s => s.instructors.map(i => i))).join(', ')} </div>
       </div>
     );
   }

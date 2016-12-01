@@ -1,0 +1,16 @@
+.results__result {
+  padding: 15px;
+  margin: 15px 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  position: relative;
+  font-size: 1.0em;
+}
+
+.result__name {
+  color: #4078c0;
+}
+
+.result__name:hover {
+  text-decoration: underline;
+}

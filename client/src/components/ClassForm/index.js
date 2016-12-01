@@ -126,7 +126,7 @@ class ClassForm extends Component {
           />
         </div>
         <div className="submit">
-          <input type="submit" onClick={this.handleSubmit.bind(this)}/>
+          <input value="Go" type="submit" onClick={this.handleSubmit.bind(this)}/>
         </div>
       </form>
     );

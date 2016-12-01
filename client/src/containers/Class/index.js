@@ -23,27 +23,22 @@ class Class extends Component {
       let { query } = this.props.location;
 
       let url = `${BASE_URL}/course/now?location=${query.location}&day=${query.day}&start=${query.start}`;
+
       fetch(url)
         .then(res => this.setState({
           courses: res.data,
-          title: (res.data.map(o => o.code)).join(', '),
+          title: '',
           dataLoaded: true
         }))
-        .catch(err => console.error(err))
+        .catch(err => console.error(err));
     });
   }
 
-  get pageHeader() {
-    let { query } = this.props.location;
-
-    return !query
-      ? <div></div>
-      : <PageHeader title={this.state.title || "Loading..."} subtitle={`${query.location}, ${query.day} @ ${this.formTime(query.start)}`}/>
-  }
-
   get courses() {
+    console.log(this.state.courses);
+
     return (
-      <div>
+      <div className="container__results">
         {this.state.courses.map((course, i) => (
           <Result key={i} course={course} />
         ))}
@@ -72,7 +67,6 @@ class Class extends Component {
 
   render() {
     let component;
-    console.log(this.state.courses);
 
     if (!this.state.domLoaded) {
       component = (
@@ -81,37 +75,32 @@ class Class extends Component {
         </div>
       );
     } else {
-      let subcomponent;
-
-      if (!this.state.dataLoaded) {
-        subcomponent = (
+      let subcomponent = !this.state.dataLoaded
+        ? (
           <div className="body__content--loading">
             <img src={loading} alt="Loading"/>
           </div>
-        );
-      } else {
-        subcomponent = (
+        ) : (
           <div className="content__container">
             {this.courses}
           </div>
         );
-      }
+
+      let { query } = this.props.location;
 
       component = (
         <div>
-          <div className="body__header">{this.pageHeader}</div>
-          <div className="body__content">
-            {subcomponent}
+          <div className="body__header">
+            <PageHeader title={this.state.title || 'Loading...'} subtitle={query ? `${query.location}, ${query.day} @ ${this.formTime(query.start)}` : ''}/>
           </div>
+          <div className="body__content">{subcomponent}</div>
         </div>
       );
     }
 
     return (
       <div className="app__body">
-        <div className="body__container">
-          {component}
-        </div>
+        <div className="body__container">{component}</div>
       </div>
     );
   }
