@@ -27,7 +27,7 @@ class Class extends Component {
       fetch(url)
         .then(res => this.setState({
           courses: res.data,
-          title: '',
+          title: (res.data.map(o => o.code)).join(', '),
           dataLoaded: true
         }))
         .catch(err => console.error(err));
