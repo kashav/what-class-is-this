@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if ! [ "$(ps -ax | grep -v grep | grep mongod)" ]; then
-  echo "\`mongod\` not running."
+  echo "\`mongodb\` not running."
   exit
 fi
 

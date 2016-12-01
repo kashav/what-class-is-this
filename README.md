@@ -6,7 +6,7 @@
 
 - __Requirements__
   + [Go](https://golang.org/)
-  + [npm](https://www.npmjs.com/)
+  + [Node.js](https://nodejs.org/en/)
   + [MongoDB](https://www.mongodb.com/)
 
 - Clone repository.
@@ -26,7 +26,7 @@
 - Start MongoDB (this will run it as a Daemon process, simply use `mongod` to run it normally)
 
   ```
-  $ mongod --fork --logpath log/mongod.log --logappend
+  $ mongod --logpath log/mongod.log --logappend
   ```
 
 - Populate database
@@ -47,10 +47,6 @@
   $ cd client
   $ npm start
   ```
-
-### Usage
-
--_Coming soon._
 
 ### Contribute
 
