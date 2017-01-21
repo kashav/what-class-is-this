@@ -19,8 +19,7 @@
 - Install dependencies
 
   ```sh
-  $ cd client && npm install && cd ..
-  $ cd server && go get -d && cd ..
+  $ make
   ```
 
 - Start MongoDB (this will run it as a Daemon process, simply use `mongod` to run it normally)
@@ -38,14 +37,13 @@
 - Start server (include the `&` to run in background)
 
   ```sh
-  $ go build -o server/www server/server.go && server/www &
+  $ server/www &
   ```
 
 - Start web application
 
   ```sh
-  $ cd client
-  $ npm start
+  $ client/www
   ```
 
 ### Contribute

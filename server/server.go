@@ -10,7 +10,7 @@ import (
 	"github.com/rs/cors"
 	"gopkg.in/mgo.v2"
 
-	"what-class-is-this/server/controllers"
+	"github.com/kshvmdn/what-class-is-this/server/controllers"
 )
 
 func getSession() *mgo.Session {
@@ -37,10 +37,10 @@ func main() {
 		port = "3001"
 	}
 
+	log.Printf("Listening at http://localhost:%s\n", port)
+
 	handler := cors.Default().Handler(router)
 	if err := http.ListenAndServe(fmt.Sprintf("localhost:%s", port), handler); err != nil {
 		log.Fatal(err)
 	}
-
-	log.Print("Listening at http://localhost:%s.\n", port)
 }
