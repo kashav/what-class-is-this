@@ -31,3 +31,6 @@ vendor/
 
 # Temporary builds
 tmp/
+
+# Built project
+www

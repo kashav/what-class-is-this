@@ -12,7 +12,7 @@ import (
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 
-	"what-class-is-this/server/models"
+	"github.com/kshvmdn/what-class-is-this/server/models"
 )
 
 type CourseController struct {
