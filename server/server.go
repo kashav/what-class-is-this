@@ -37,7 +37,7 @@ func main() {
 		port = "3001"
 	}
 
-	log.Println("Listening at http://localhost:%s", port)
+	log.Printf("Listening at http://localhost:%s\n", port)
 
 	handler := cors.Default().Handler(router)
 	if err := http.ListenAndServe(fmt.Sprintf("localhost:%s", port), handler); err != nil {
