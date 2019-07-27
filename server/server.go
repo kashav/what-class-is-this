@@ -10,7 +10,7 @@ import (
 	"github.com/rs/cors"
 	"gopkg.in/mgo.v2"
 
-	"github.com/kshvmdn/what-class-is-this/server/controllers"
+	"github.com/kashav/what-class-is-this/server/controllers"
 )
 
 func getSession() *mgo.Session {
